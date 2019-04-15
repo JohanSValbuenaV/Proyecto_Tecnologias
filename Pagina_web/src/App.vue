@@ -26,6 +26,7 @@ export default {
   },
   created: function(){
     this.$store.dispatch('getFirebaseDataBase')
+  
   }
 };
 </script>

@@ -3,20 +3,20 @@
     <h2>COMENTARIOS Prueba</h2>
     <p>
       <label for="nombre">nombre</label>
-      <input id="nombre" v-model="nombre" placeholder="nombre" type="text">
+      <input id="nombre" v-model="comentario.nombre" placeholder="nombre" type="text">
     </p>
 
     <p>
       <label for="comentario/denuncia">COMENTARIO/DENUNCIA</label>
-      <textarea id="comentario" v-model="comenta" placeholder="Comentario o denuncia"></textarea>
+      <textarea id="comentario" v-model="comentario.comenta" placeholder="Comentario o denuncia"></textarea>
     </p>
     <button @click="Enviar"> enviar comentario</button>
      
 
 
-<ul v-for="(item, index) in comentario" :key="index">
+<ul v-for="(item, index) in  loadedC" :key="index">
     <li>
-{{item.nombre}} -- {{item.comenta}}
+{{item.nombre}} - {{item.comenta}}
     </li>
 </ul>
 
@@ -25,30 +25,34 @@
 </template>
 
 <script>
-import { mapState,mapMutations } from "vuex";
+import { mapState,mapMutations, mapGetters } from "vuex";
+
+
+
 
 export default {
   name: "Comentarios",
-  data() {
-    return {
-      nombre: null,
-      comenta: null
-    };
-  },
+ 
+
   computed: {
-    ...mapState(["comentario"])
-  },
+    ...mapGetters(['comentario','loadedC'])
+  }
+,
   methods: {
-      ...mapMutations(['agregarComentario']),
+     
       Enviar(){
-          let comento = {
-              nombre: this.nombre,
-              comenta: this.comenta
-          } 
-         this.$store.commit('agregarComentario',comento)
-         this.nombre = null
-        this.comenta = null
+        console.log( this.comentario.nombre);
+          this.$store.dispatch('agregarComentario')
+let obj = {nombre: this.comentario.nombre,
+comenta: this.comentario.comenta }
+          this.$store.commit('loadComentario',obj);
+          
+          this.comentario.nombre= ' ';
+          this.comentario.comenta = ' ';
       }
+  },
+  created: function(){
+   this.$store.dispatch('loadComentarios');
   }
 };
 </script>
