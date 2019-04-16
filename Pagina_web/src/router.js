@@ -23,6 +23,12 @@ export default new Router({
       name: 'about',
      
       component: () => import('./views/About.vue')
+    },
+    {
+      path: '/admin',
+      name: 'admi',
+     
+      component: () => import('./views/admin.vue')
     }
   ]
 })

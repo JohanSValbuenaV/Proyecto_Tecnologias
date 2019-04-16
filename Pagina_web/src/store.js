@@ -38,9 +38,11 @@ export default new Vuex.Store({
     },
     loadComentario: function(state,playload){
       state._loadedC.push(playload);
+   
     },
     setloadComentario: function(state,payload){
       state._loadedC =payload;
+     
     }
    
   },
@@ -70,6 +72,7 @@ export default new Vuex.Store({
             comenta: obj[key].comenta
           })
         }
+
         context.commit('setloadComentario',comentarios)
       })
       .catch(
