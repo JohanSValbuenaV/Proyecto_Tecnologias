@@ -3,6 +3,7 @@
     <div v-if="isTrue" id="nav">
       <router-link to="/">Home</router-link>|
       <router-link to="/comentarios">Comentarios</router-link>|
+      <router-link to="/contactenos">Contactenos</router-link>|
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>

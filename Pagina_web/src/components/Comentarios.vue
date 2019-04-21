@@ -4,12 +4,12 @@
 <div class="column col-lg-6 m-auto">
  <div class="nombre col-lg-12">
       <label for="nombre">Nombre</label>
-      <input id="nombre" v-model="comentario.nombre" placeholder="nombre" type="text">
+      <input class="form-control" id="nombre" v-model="comentario.nombre" placeholder="nombre" type="text">
     </div>
 
     <div class="comentario col-lg-12">
       <label for="Denuncia">Denuncia</label>
-      <textarea id="comentario" v-model="comentario.comenta" placeholder="Denuncia"></textarea>
+      <textarea class="form-control" id="comentario" v-model="comentario.comenta" placeholder="Denuncia"></textarea>
     </div>
 </div>
    
