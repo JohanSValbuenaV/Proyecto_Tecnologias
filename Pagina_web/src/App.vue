@@ -1,33 +1,23 @@
 <template>
   <div id="app">
-    <div v-if="isTrue" id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/comentarios">Comentarios</router-link>|
-      <router-link to="/contactenos">Contactenos</router-link>|
-      <router-link to="/about">About</router-link>
+    <div id="nav">
+      <Daheader></Daheader>
+      
+      
     </div>
     <router-view/>
-
-    <button @click="toggleMe">toggle me</button>
+    <DaFooter></DaFooter>
   </div>
 </template>
 
 <script>
+import Daheader from "@/components/DaHeader.vue";
+import DaFooter from "@/components/DaFooter.vue";
 export default {
   name: "app",
-  computed: {
-    isTrue: function() {
-      return this.$store.getters.isTrue;
-    }
-  },
-  methods: {
-    toggleMe: function (){
-      this.$store.dispatch('toggle');
-    }
-  },
-  created: function(){
-    this.$store.dispatch('getFirebaseDataBase')
-  
+  components: {
+    Daheader,
+    DaFooter
   }
 };
 </script>

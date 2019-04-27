@@ -35,6 +35,27 @@ export default new Router({
       name: 'admi',
      
       component: () => import('./views/admin.vue')
-    }
+    },
+    {
+      path: '/dip1',
+      name: 'dip1',
+      component: () => import('./components/CrsItem1.vue')
+    },
+    {
+      path: '/dip2',
+      name: 'dip2',
+      component: () => import('./components/CrsItem2.vue')
+    },
+    {
+      path: '/dip3',
+      name: 'dip3',
+      component: () => import('./components/CrsItem3.vue')
+    },
+    {
+      path: '/dip4',
+      name: 'dip4',
+      component: () => import('./components/CrsItem4.vue')
+    },
+
   ]
 })

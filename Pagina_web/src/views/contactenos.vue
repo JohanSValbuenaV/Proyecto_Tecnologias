@@ -1,6 +1,6 @@
 <template>
     <div>   
-    <Contacto></Contacto>
+    <Contacto class="mt-5"></Contacto>
     
     </div>
 </template>

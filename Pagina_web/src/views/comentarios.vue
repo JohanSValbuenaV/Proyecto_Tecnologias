@@ -1,6 +1,6 @@
 <template>
     <div>
-<comentarios></comentarios>
+<comentarios class="mt-5"></comentarios>
     </div>
 </template>
 
